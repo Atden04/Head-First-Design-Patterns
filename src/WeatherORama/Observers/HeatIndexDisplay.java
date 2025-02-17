@@ -2,9 +2,16 @@ package WeatherORama.Observers;
 
 import WeatherORama.Interfaces.DisplayElement;
 import WeatherORama.Interfaces.Observer;
+import WeatherORama.Subjects.WeatherData;
 
 public class HeatIndexDisplay implements Observer, DisplayElement {
     private float heatIndex;
+    private WeatherData weatherData;
+
+    public HeatIndexDisplay(WeatherData weatherData) {
+        this.weatherData = weatherData;
+        weatherData.registerObserver(this);
+    }
 
     @Override
     public void display() {
