@@ -1,4 +1,4 @@
-package Starbuzz;
+package Starbuzz.Beverages;
 
 public abstract class Beverage {
     String description = "Unknown Beverage";
