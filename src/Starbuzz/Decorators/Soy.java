@@ -1,6 +1,7 @@
 package Starbuzz.Decorators;
 
 import Starbuzz.Beverages.Beverage;
+import Starbuzz.Enums.Size;
 
 public class Soy extends CondimentDecorator {
     public Soy(Beverage beverage) {
@@ -12,6 +13,11 @@ public class Soy extends CondimentDecorator {
     }
 
     public double cost() {
-        return beverage.cost() + 0.15;
+        if (this.beverage.getSize() == Size.TALL)
+            return beverage.cost() + 0.1;
+        else if (this.beverage.getSize() == Size.GRANDE)
+            return beverage.cost() + 0.15;
+        else
+            return beverage.cost() + 0.2;
     }
 }
